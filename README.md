@@ -23,8 +23,11 @@ python manage.py runserver 0.0.0.0:80
 ===============================================
 docker build -t python-dev:latest .
 
-docker run -it -p 8081:80 python-dev:latest
+docker run --rm -it -p 8081:80 python-dev:latest
 docker run -d -p 8081:80 python-dev:latest
+
+docker run -d -P python-dev:latest
+docker run -d --name mysite -p 8081:80 python-dev:latest
 
 有页面 ,访问：
 localhost:8081/admin/  admin 12345678

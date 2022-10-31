@@ -15,4 +15,11 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
+ENV MYNAME="taozhaosheng"\
+    APP_PORT=80
+
+VOLUME /data
+
+EXPOSE $APP_PORT
+
 CMD ["uwsgi","--ini","uwsgi.ini"]
