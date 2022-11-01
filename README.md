@@ -21,13 +21,13 @@ docker run -it -v c:/python:/data --name worker1 python:3.9 bash
 python manage.py runserver 0.0.0.0:80
 
 ===============================================
-docker build -t python-dev:latest .
+docker build -t mysite:latest .
 
-docker run --rm -it -p 8081:80 python-dev:latest
-docker run -d -p 8081:80 python-dev:latest
+docker run --rm -it -p 8081:80 mysite:latest
+docker run -d -p 8081:80 mysite:latest
 
-docker run -d -P python-dev:latest
-docker run -d --name mysite -p 8081:80 python-dev:latest
+docker run -d -P mysite:latest
+docker run -d --name mysite -p 8081:80 mysite:latest
 
 有页面 ,访问：
 localhost:8081/admin/  admin 12345678
