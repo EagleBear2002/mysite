@@ -1,6 +1,6 @@
 FROM python:3.9
 
-LABEL maintainer "tzs919@163.com"
+LABEL maintainer=tzs919@163.com
 
 RUN mkdir -p /home/docker/code/app \
     && mkdir -p /root/.pip
@@ -20,4 +20,5 @@ VOLUME /data
 
 EXPOSE $APP_PORT
 
-CMD ["uwsgi","--ini","uwsgi.ini"]
+#CMD ["uwsgi","--ini","uwsgi.ini"]
+CMD ["python","manage.py","runserver","0.0.0.0:80"]
